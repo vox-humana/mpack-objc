@@ -31,7 +31,6 @@ static id parseElement(mpack_reader_t *reader) {
 
         case mpack_type_bin:
         {
-            // TODO: use external tmp buffer for small chunks
             void *buffer = malloc(val.v.l);
             if (buffer == NULL) {
                 mpack_skip_bytes(reader, val.v.l);
@@ -51,7 +50,6 @@ static id parseElement(mpack_reader_t *reader) {
 
         case mpack_type_str:
         {
-            // TODO: use external tmp buffer for small chunks
             void *buffer = malloc(val.v.l);
             if (buffer == NULL) {
                 mpack_skip_bytes(reader, val.v.l);
