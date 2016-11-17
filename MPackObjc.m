@@ -199,7 +199,12 @@ static void packNumber(NSNumber *number, mpack_writer_t *writer) {
 }
 
 static void packString(NSString *string, mpack_writer_t *writer) {
-    mpack_write_cstr(writer, string.UTF8String);
+    const char *str = string.UTF8String;
+    NSCAssert(str != NULL, @"UTF8String returns NULL for string: %@", string);
+    if (!str) {
+        str = "";
+    }
+    mpack_write_cstr(writer, str);
 }
 
 static void packData(NSData *data, mpack_writer_t *writer) {
