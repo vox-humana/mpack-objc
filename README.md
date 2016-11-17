@@ -1,2 +1,3 @@
 # mpack-objc
-[MPack](https://github.com/ludocode/mpack) Objective-C wrapper 
+Yet another [MessagePack](http://msgpack.org) for Objective-C. Straightforward wrapper of 
+[MPack](https://github.com/ludocode/mpack) C library.
